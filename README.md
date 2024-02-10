@@ -1,2 +1,2 @@
-# JavaStudy
-Java 언어 관련 공부한 것
+# First-Time-Coding-with-Java
+코딩은 처음이라 with 자바
