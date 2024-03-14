@@ -1,2 +1,2 @@
-# First-Time-Coding-with-Java
-코딩은 처음이라 with 자바
+# Java-First-Study
+처음하는 자바 공부
