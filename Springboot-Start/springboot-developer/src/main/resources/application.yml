@@ -1,0 +1,10 @@
+spring:
+  jpa:
+    # show-sql와 format_sql는 쿼리 실행 구문을 보여주는 옵션
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        
+    # 테이블 생성 후 data.sql 실행
+    defer-datasource-initialization: true
