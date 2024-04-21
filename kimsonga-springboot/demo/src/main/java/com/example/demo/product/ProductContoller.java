@@ -24,6 +24,8 @@ public class ProductContoller {
         // 현재 화면이 아니라 데이터를 던지는 상황
         // 데이터를 던진다는 것은 그냥 API가 아니라 REST API
         // REST API는 reponse body라고 하는 그 body에다가
-        return "NoteBook";
+
+        ProductService productService = new ProductService();
+        return productService.findProduct();
     }
 }
