@@ -1,5 +1,6 @@
 package com.example.demo.product;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,6 +18,8 @@ public class ProductContoller {
     // 요청이 날아오면 그 요청에 맞는 메서드를 호출해주는 것, 그 호출 당하는 메서드
     // == 요청에 따른 메서드 호출
 
+    @Autowired // 의존성 주입
+    private ProductService productService;
 
     // 상품 조회
     @RequestMapping(value = "", method = RequestMethod.GET)
@@ -25,7 +28,7 @@ public class ProductContoller {
         // 데이터를 던진다는 것은 그냥 API가 아니라 REST API
         // REST API는 reponse body라고 하는 그 body에다가
 
-        ProductService productService = new ProductService();
+        //ProductService productService = new ProductService();
         return productService.findProduct();
     }
 }
