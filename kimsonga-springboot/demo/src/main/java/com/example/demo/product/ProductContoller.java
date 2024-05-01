@@ -31,4 +31,9 @@ public class ProductContoller {
         //ProductService productService = new ProductService();
         return productService.findProduct();
     }
+
+    @RequestMapping(value = "", method = RequestMethod.POST)
+    public void saveProduct() {
+        productService.saveProduct();
+    }
 }

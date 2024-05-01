@@ -13,7 +13,12 @@ public class ProductService {
     ProductService(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
-    public String findProduct() {
+    public String findProduct()
+    {
         return productRepository.findProduct();
+    }
+
+    public void saveProduct() {
+        productRepository.save();
     }
 }

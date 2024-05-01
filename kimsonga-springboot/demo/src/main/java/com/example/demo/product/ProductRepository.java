@@ -11,6 +11,10 @@ public class ProductRepository {
     private int id = 1;
 
     public String findProduct() {
-        return "notebook";
+        return db.get(1);
+    }
+
+    public void save() {
+        db.put(id++, "Notebook");
     }
 }
