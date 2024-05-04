@@ -22,7 +22,8 @@ public class ProductContoller {
     private ProductService productService;
 
     // 상품 조회
-    @RequestMapping(value = "", method = RequestMethod.GET)
+    // 상품 여러 개를 처리할 수도 있고 단일로 처리할 수도 있으니까 복수형으로 value 지정
+    @RequestMapping(value = "/products", method = RequestMethod.GET)
     public String findProduct() {
         // 현재 화면이 아니라 데이터를 던지는 상황
         // 데이터를 던진다는 것은 그냥 API가 아니라 REST API
@@ -32,7 +33,7 @@ public class ProductContoller {
         return productService.findProduct();
     }
 
-    @RequestMapping(value = "", method = RequestMethod.POST)
+    @RequestMapping(value = "/products", method = RequestMethod.POST)
     public void saveProduct() {
         productService.saveProduct();
     }
