@@ -30,6 +30,10 @@ public class ProductContoller {
         // REST API는 reponse body라고 하는 그 body에다가
 
         //ProductService productService = new ProductService();
+
+        // System.out.println은 사용자에게 보여주는 부분이기 때문에
+        // 시스템 내부적으로 데이터를 확인하려면 로그를 사용하는 걸 권고
+        System.out.println("GET");
         return productService.findProduct();
     }
 
