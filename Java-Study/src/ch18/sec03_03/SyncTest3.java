@@ -46,7 +46,6 @@ public class SyncTest3 {
 
         synchronized(this) {
             try { Thread.sleep(100); } catch (InterruptedException e) {}
-    
             System.out.println("실행 스레드 : " + Thread.currentThread().getName());
             System.out.println("thread1 : " + t1.getState());
             System.out.println("thread2 : " + t2.getState());
