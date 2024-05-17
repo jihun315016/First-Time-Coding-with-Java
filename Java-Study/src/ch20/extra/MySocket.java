@@ -21,6 +21,7 @@ public class MySocket {
         // /192.168.0.23:29671
         System.out.println(socket.getLocalAddress() + ":" + socket.getLocalPort());
         
+        
         // host, port 한 줄에 연결
         socket = new Socket(host, port); 
         
