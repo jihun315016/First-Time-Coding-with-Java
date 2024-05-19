@@ -14,7 +14,7 @@ public class ProductRepository {
         return db.get(1);
     }
 
-    public void save() {
-        db.put(id++, "Notebook");
+    public void save(String productName) {
+        db.put(id++, productName);
     }
 }

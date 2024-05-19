@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller // 그냥 화면(뷰)를 던져주는 API가 되는 것
@@ -37,8 +38,10 @@ public class ProductContoller {
         return productService.findProduct();
     }
 
+    // localhost:8080/products?name=handcream
     @RequestMapping(value = "/products", method = RequestMethod.POST)
-    public void saveProduct() {
-        productService.saveProduct();
+    public void saveProduct(@RequestParam(value="name") String productName) {
+        System.out.println("POST");
+        productService.saveProduct(productName);
     }
 }
