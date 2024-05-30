@@ -13,9 +13,9 @@ public class ProductService {
     ProductService(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
-    public String findProduct()
+    public String findProduct(int id)
     {
-        return productRepository.findProduct();
+        return productRepository.findProduct(id);
     }
 
     public void saveProduct(String productName) {
