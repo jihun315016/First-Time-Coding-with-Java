@@ -11,9 +11,17 @@ public class TestContoller {
     @Autowired
     TestService testService;
 
+    @Autowired
+    MemberService memberService;
+
     @GetMapping("/test")
     public List<Member> getAllMembers() {
         List<Member> members = testService.getAllMembers();
         return members;
+    }
+
+    @GetMapping("/membertest")
+    public void memberTest() {
+        memberService.test();
     }
 }
