@@ -1,7 +1,6 @@
 package ch26.sec04_05;
 
 import java.util.List;
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class PeekTest {
