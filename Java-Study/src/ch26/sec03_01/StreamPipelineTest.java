@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.OptionalDouble;
 import java.util.stream.Stream;
+
+import ch26.Student;
+
 import java.util.stream.IntStream;
 
 public class StreamPipelineTest {
