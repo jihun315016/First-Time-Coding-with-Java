@@ -5,6 +5,8 @@
     <title>Title</title>
 </head>
 <body>
+    <!-- dto의 필드 이름과 name은 반드시 같아야 함 -->
+    <!-- 동일한 이름의 필드에 setter가 있다면 컨트롤러 파라미터로 알아서 값을 담아준다. -->
     <form action="/save" method="post" enctype="multipart/form-data">
         제목: <input type="text" name="boardTitle"><br>
         작성자: <input type="text" name="boardWriter"><br>
