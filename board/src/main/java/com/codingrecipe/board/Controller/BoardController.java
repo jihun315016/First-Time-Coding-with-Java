@@ -25,7 +25,8 @@ public class BoardController {
     public String save(@ModelAttribute BoardDTO boardDTO) { // @ModelAttribute 생략 가능
         System.out.println("boardDTO = " + boardDTO);
         boardService.save(boardDTO);
-        return "index";
+        // 재요청 : 화면을 띄우는 것이 아니라 /list로 요청하는 것
+        return "redirect:/list";
     }
 
     // Model : Spring 객체에서 제공하는 인터페이스
@@ -50,5 +51,26 @@ public class BoardController {
         model.addAttribute("board", boardDTO);
         System.out.println("boardDTO = " + boardDTO);
         return "detail";
+    }
+
+    @GetMapping("/update/{id}")
+    public String update(@PathVariable("id") Long id, Model model) {
+        BoardDTO boardDTO = boardService.findById(id);
+        model.addAttribute("board", boardDTO);
+        return "update";
+    }
+
+    @PostMapping("/update/{id}")
+    public String update(BoardDTO boardDTO, Model model) {
+        boardService.update(boardDTO);
+        BoardDTO dto = boardService.findById(boardDTO.getId());
+        model.addAttribute("board", dto);
+        return "detail";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable("id") Long id) {
+        boardService.delete (id);
+        return "redirect:/list";
     }
 }
