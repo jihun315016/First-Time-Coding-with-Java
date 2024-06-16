@@ -12,13 +12,11 @@
 
 </head>
 <body>
-<div class="card" th:each="i : ${items}"> <!-- th:each="작명 : ${변수명}" -->
-    <img src="https://placehold.co/300">
-    <div>
-        <!--이렇게하면 text의 값이 바지 대신 들어간다.-->
-        <h4 th:text="${i.title}"></h4>
-        <p th:text="${i.price}"></p>
-    </div>
-</div>
+    <!-- name 작명을 해야 서버에 전송된다. -->
+    <form action="/add" method="POST">
+        <input name="title">
+        <input name="price">
+        <button type="submit">버튼</button>
+    </form>
 </body>
 </html>
