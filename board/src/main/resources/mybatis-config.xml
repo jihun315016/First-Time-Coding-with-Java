@@ -10,6 +10,6 @@
         <typeAlias type="com.codingrecipe.board.dto.BoardDTO" alias="board"></typeAlias>
         <!-- com.employee.EmployeeDTO 클래스에 대해 employee 별칭 지정 -->
         <!-- 지정된 별칭은 매퍼 파일에서 사용할 수 있다. -->
-        <typeAlias type="com.employee.EmployeeDTO" alias="employee"></typeAlias>
+        <typeAlias type="com.codingrecipe.board.EmployeeDTO" alias="employee"></typeAlias>
     </typeAliases>
 </configuration>

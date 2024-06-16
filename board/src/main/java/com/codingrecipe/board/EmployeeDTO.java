@@ -1,4 +1,4 @@
-package com.employee;
+package com.codingrecipe.board;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -12,3 +12,4 @@ public class EmployeeDTO {
     private String name;
     private int salary;
 }
+
