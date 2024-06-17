@@ -4,12 +4,11 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 @Controller
 @RequiredArgsConstructor // 롬북 문법, private final ItemRepository itemRepository; 이걸 쓰기 위한 문법
@@ -45,14 +44,27 @@ public class ItemController {
     // @RequestParam 생략 가능
     @PostMapping("/add")
     // String writePost(@RequestParam String title, @RequestParam Integer price)
-    String writePost(@RequestParam Map formData) {
-        System.out.println(formData);
-        Item item = new Item();
-        item.setTitle(formData.get("title").toString());
-        item.setPrice(Integer.parseInt(formData.get("price").toString()));
+    String writePost(@ModelAttribute Item item) {
+        System.out.println(item);
         itemRepository.save(item);
-        System.out.println(formData.get("title"));
         return "redirect:/list";
+    }
+
+    // id를 url 파라미터라고 부름
+    @GetMapping("/detail/{id}")
+    String detail(@PathVariable Long id, Model model) {
+        Optional<Item> result = itemRepository.findById(id);
+        // Optional 타임은 이 변수가 비어있을 수도 있고 Item 타입일 수도 있다는 뜻
+        // 결과가 없는 경우를 대비하기 위한 타입
+        // 이 변수의 값을 쓸 때는 .get()을 써야 함
+        if (result.isPresent()) {
+            // result 값 없는데 get하면 오류 남
+            System.out.println(result.get());
+            model.addAttribute("item", result.get());
+        } else {
+            return "redirect:/list";
+        }
+        return "detail.html";
     }
 }
 // jpa 사용하기
