@@ -41,7 +41,6 @@ public class ItemController {
     }
 
     // url 작명은 동사보다는 명사로 하는 게 좋음
-    // @RequestParam 생략 가능
     @PostMapping("/add")
     // String writePost(@RequestParam String title, @RequestParam Integer price)
     String writePost(@ModelAttribute Item item) {
