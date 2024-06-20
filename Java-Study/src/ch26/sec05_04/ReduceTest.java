@@ -24,6 +24,7 @@ public class ReduceTest {
             .reduce((a, b) -> a.getScore() > b.getScore() ? a : b)
             .get();
         
+        // 이순신
         System.out.println(bestScoreStudent.getName());
     }
 }
