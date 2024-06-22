@@ -1,6 +1,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/windows,visualstudiocode,java
 # Edit at https://www.toptal.com/developers/gitignore?templates=windows,visualstudiocode,java
 
+# User defind
+spring-test/src/main/resources/application.properties
+
 ### Java ###
 # Compiled class file
 *.class
