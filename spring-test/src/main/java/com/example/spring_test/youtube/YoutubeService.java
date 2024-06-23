@@ -14,7 +14,7 @@ import java.util.List;
 
 @Service
 public class YoutubeService {
-    @Value("${youtube.api.key}")
+    @Value("${google.api.key}")
     private String apiKey;
 
     public String findVideo(String keyword) throws IOException {

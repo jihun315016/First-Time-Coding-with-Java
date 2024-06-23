@@ -1,4 +1,4 @@
-package com.example.spring_test.youtube;
+package com.example.spring_test;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
