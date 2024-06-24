@@ -1,7 +1,6 @@
-package com.example.shop;
+package com.example.shop.Item;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -104,6 +103,16 @@ public class ItemController {
         return "redirect:/list";
     }
 
+
+    @DeleteMapping("/item")
+    ResponseEntity<String> deleteItem(@RequestParam Long id) {
+        itemRepository.deleteById(id);
+        // ajax로 데이터를 주고 받을 때 리다이렉트 안 됌
+        // return "redirect:/list";
+        return ResponseEntity.status(200).body("삭제 완료");
+    }
+
+
 //    @ExceptionHandler(Exception.class)
 //    public void handler() {
 //        // 같은 클래스의 메서드 안에서 오류가 나면 대신 이 안에 있는 코드를 실행해 줌
@@ -112,6 +121,13 @@ public class ItemController {
 //    }
     // 근데 이것도 컨트롤러 많아지면 귀찮은데
     // 모든 컨트롤러 파일을 에러를 캐치하려면 @ControllerAdvice -> MyExceptionHandler 클래스 참고
+
+
+    @GetMapping("/test1")
+    String editItem() {
+        System.out.println("요청 들어옴");
+        return "redirect:/list";
+    }
 }
 // jpa 사용하기
 // 1. repository 만들기
